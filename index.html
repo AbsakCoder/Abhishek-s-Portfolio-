@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhishek Upadhyay</title>
+  <title>Abhishek Upadhyay | Creative Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -26,7 +26,7 @@
   <!-- Hero Section -->
   <section id="hero">
     <div class="container">
-      <h1 class="animated-text">Hi, I'm <span>Abhishek Upadhyay</span></h1>
+      <h1 class="glitch-text">Hi, I'm <span>Abhishek Upadhyay</span></h1>
       <p class="tagline">I build things for the web—sometimes they even work. 😅.</p>
       <a href="#projects" class="cta-button">View My Work</a>
     </div>
@@ -36,7 +36,9 @@
   <section id="about">
     <div class="container">
       <h2>About Me</h2>
-      <p>I believe in clean code, smooth UI, and the power of a well-placed semicolon. When I’m not coding, I’m probably over-caffeinating, browsing Stack Overflow, or convincing myself that one more tutorial will make me a genius.</p>
+      <div class="about-content">
+        <p id="typing-text"></p>
+      </div>
     </div>
   </section>
 
@@ -46,28 +48,40 @@
       <h2>My Skills</h2>
       <div class="skills-grid">
         <div class="skill-item">
-          <i class="fab fa-html5"></i>
           <h3>HTML</h3>
+          <div class="progress-bar">
+            <div class="progress" style="--progress: 90%;"></div>
+          </div>
         </div>
         <div class="skill-item">
-          <i class="fab fa-css3-alt"></i>
           <h3>CSS</h3>
+          <div class="progress-bar">
+            <div class="progress" style="--progress: 85%;"></div>
+          </div>
         </div>
         <div class="skill-item">
-          <i class="fab fa-js"></i>
           <h3>JavaScript</h3>
+          <div class="progress-bar">
+            <div class="progress" style="--progress: 80%;"></div>
+          </div>
         </div>
         <div class="skill-item">
-          <i class="fab fa-react"></i>
           <h3>React</h3>
+          <div class="progress-bar">
+            <div class="progress" style="--progress: 75%;"></div>
+          </div>
         </div>
         <div class="skill-item">
-          <i class="fab fa-node-js"></i>
           <h3>Node.js</h3>
+          <div class="progress-bar">
+            <div class="progress" style="--progress: 70%;"></div>
+          </div>
         </div>
         <div class="skill-item">
-          <i class="fas fa-database"></i>
           <h3>Database</h3>
+          <div class="progress-bar">
+            <div class="progress" style="--progress: 65%;"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,47 +92,57 @@
     <div class="container">
       <h2>My Projects</h2>
       <div class="project-grid">
-        <!-- Portfolio Project -->
+        <!-- Project 1 -->
         <div class="project-item">
-          <div class="pixelated-box">
-            <h3>Personal Portfolio</h3>
-            <p>This is my personal portfolio website where I showcase my skills, projects, and contact information. Built with HTML, CSS, and JavaScript.</p>
+          <div class="project-card">
+            <div class="front">
+              <h3>Personal Portfolio</h3>
+            </div>
+            <div class="back">
+              <p>This is my personal portfolio website where I showcase my skills, projects, and contact information. Built with HTML, CSS, and JavaScript.</p>
+            </div>
           </div>
         </div>
-        <!-- Ongoing Project 1 -->
+        <!-- Project 2 -->
         <div class="project-item coming-soon">
-          <div class="pixelated-box">
-            <h3>Project X</h3>
-            <p>Coming Soon...</p>
+          <div class="project-card">
+            <div class="front">
+              <h3>Project X</h3>
+            </div>
+            <div class="back">
+              <p>Coming Soon...</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>&copy; 2025 Abhishek Upadhyay. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://github.com/absakcoder" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/absakbhai/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form id="contact-form" action="https://formspree.io/f/xqaebngv" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="form-message"></div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Abhishek Upadhyay. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://github.com/absakcoder" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/absakbhai/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
