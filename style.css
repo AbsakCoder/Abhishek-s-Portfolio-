@@ -83,20 +83,28 @@ body.dark {
   text-align: center;
 }
 
-.animated-text {
+.glitch-text {
   font-size: 3rem;
   font-weight: bold;
-  animation: fadeIn 2s ease-in-out;
+  position: relative;
+  animation: glitch 2s infinite;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 0 red, 2px 0 cyan;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  25% {
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
+  50% {
+    text-shadow: -2px 0 cyan, 2px 0 red;
+  }
+  75% {
+    text-shadow: 2px 0 cyan, -2px 0 red;
+  }
+  100% {
+    text-shadow: -2px 0 red, 2px 0 cyan;
   }
 }
 
@@ -137,6 +145,7 @@ body.dark {
 #skills {
   padding: 4rem 0;
   text-align: center;
+  background: #111;
 }
 
 .skills-grid {
@@ -147,46 +156,39 @@ body.dark {
 }
 
 .skill-item {
-  background: #222;
-  color: #fff;
-  padding: 2rem;
-  border: 2px solid #444;
-  border-radius: 5px;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  position: relative;
-  animation: float 3s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #444;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress {
+  height: 100%;
+  background: #fff;
+  width: var(--progress);
+  animation: fill-progress 2s ease-in-out;
+}
+
+@keyframes fill-progress {
+  from {
+    width: 0%;
   }
-  50% {
-    transform: translateY(-10px);
+  to {
+    width: var(--progress);
   }
-}
-
-.skill-item:hover {
-  transform: scale(1.05);
-  background: #333;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.skill-item i {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.skill-item:hover i {
-  transform: rotate(360deg);
 }
 
 /* Projects Section */
 #projects {
   padding: 4rem 0;
   text-align: center;
+  background: #000;
 }
 
 .project-grid {
@@ -197,40 +199,51 @@ body.dark {
 }
 
 .project-item {
-  position: relative;
+  perspective: 1000px;
 }
 
-.pixelated-box {
+.project-card {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.project-card .front,
+.project-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .front {
   background: #222;
   color: #fff;
-  padding: 2rem;
-  border: 2px solid #444;
-  border-radius: 5px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  text-align: center;
 }
 
-.pixelated-box:hover {
-  transform: scale(1.05);
+.project-card .back {
   background: #333;
+  color: #fff;
+  transform: rotateY(180deg);
 }
 
-.coming-soon {
-  background: #111;
-  border: 2px dashed #444;
+.project-item:hover .project-card {
+  transform: rotateY(180deg);
 }
 
 /* Contact Section */
 #contact {
   padding: 4rem 0;
   text-align: center;
-  background: #111; /* Dark background for contrast */
-}
-
-#contact h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #fff;
+  background: #111;
 }
 
 #contact-form {
@@ -272,12 +285,19 @@ body.dark {
   background: #ccc;
 }
 
+#form-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
 /* Footer */
 footer {
-  background: #000; /* Consistent with dark theme */
+  background: #000;
   color: #aaa;
   text-align: center;
   padding: 2rem 0;
+  position: relative;
 }
 
 footer p {
@@ -299,4 +319,25 @@ footer p {
 
 .social-icons a:hover {
   color: #fff;
+}
+
+#scroll-to-top {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#scroll-to-top:hover {
+  background: #ccc;
 }
