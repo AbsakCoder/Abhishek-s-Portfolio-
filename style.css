@@ -73,6 +73,15 @@ body.dark {
   cursor: pointer;
 }
 
+#menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Hero Section */
 #hero {
   background: #000;
@@ -148,6 +157,20 @@ body.dark {
   background: #111;
 }
 
+.skills-header {
+  margin-bottom: 2rem;
+}
+
+.skills-header h2 {
+  font-size: 2rem;
+}
+
+.skills-header .skills-logo {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -157,6 +180,22 @@ body.dark {
 
 .skill-item {
   text-align: center;
+}
+
+.skill-item i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.skill-item i:hover {
+  transform: scale(1.2);
+}
+
+.skill-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .progress-bar {
