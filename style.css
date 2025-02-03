@@ -6,10 +6,10 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   line-height: 1.6;
-  color: #333;
-  background: #f9f9f9;
+  color: #fff;
+  background: #000;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -21,19 +21,13 @@ body {
 
 /* Dark Mode */
 body.dark {
-  background: #121212;
-  color: #fff;
-}
-
-body.dark .nav-links a,
-body.dark h2,
-body.dark p {
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 /* Navigation Bar */
 #navbar {
-  background: #333;
+  background: #111;
   color: #fff;
   padding: 1rem 0;
   position: fixed;
@@ -68,7 +62,7 @@ body.dark p {
 }
 
 .nav-links a:hover {
-  color: #a777e3;
+  color: #ccc;
 }
 
 #theme-toggle {
@@ -81,13 +75,12 @@ body.dark p {
 
 /* Hero Section */
 #hero {
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  background: #000;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
 }
 
 .animated-text {
@@ -110,7 +103,7 @@ body.dark p {
 .tagline {
   font-size: 1.2rem;
   margin-top: 1rem;
-  color: #fff;
+  color: #aaa;
 }
 
 .cta-button {
@@ -118,7 +111,7 @@ body.dark p {
   margin-top: 1rem;
   padding: 0.8rem 2rem;
   background: #fff;
-  color: #333;
+  color: #000;
   text-decoration: none;
   border-radius: 5px;
   transition: transform 0.3s ease;
@@ -137,7 +130,7 @@ body.dark p {
 #about p {
   font-size: 1.1rem;
   margin-top: 1rem;
-  color: #555;
+  color: #aaa;
 }
 
 /* Projects Section */
@@ -155,60 +148,26 @@ body.dark p {
 
 .project-item {
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.project-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-item:hover img {
-  transform: scale(1.1);
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
+.pixelated-box {
+  background: #222;
   color: #fff;
-  padding: 1rem;
-  transform: translateY(100%);
-  transition: transform 0.5s ease;
+  padding: 2rem;
+  border: 2px solid #444;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-align: center;
 }
 
-.project-item:hover .overlay {
-  transform: translateY(0);
+.pixelated-box:hover {
+  transform: scale(1.05);
+  background: #333;
 }
 
-/* Coming Soon Projects */
 .coming-soon {
-  background: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 2px dashed #ccc;
-}
-
-.coming-soon-overlay {
-  text-align: center;
-}
-
-.coming-soon-overlay h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.coming-soon-overlay p {
-  font-size: 1rem;
-  color: #666;
+  background: #111;
+  border: 2px dashed #444;
 }
 
 /* Contact Section */
@@ -229,20 +188,22 @@ body.dark p {
   max-width: 500px;
   padding: 1rem;
   margin: 0.5rem 0;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   border-radius: 5px;
+  background: #222;
+  color: #fff;
   transition: border-color 0.3s ease;
 }
 
 #contact-form input:focus,
 #contact-form textarea:focus {
-  border-color: #a777e3;
+  border-color: #ccc;
 }
 
 #contact-form button {
   padding: 0.8rem 2rem;
-  background: #333;
-  color: #fff;
+  background: #fff;
+  color: #000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -250,12 +211,12 @@ body.dark p {
 }
 
 #contact-form button:hover {
-  background: #a777e3;
+  background: #ccc;
 }
 
 /* Footer */
 footer {
-  background: #333;
+  background: #111;
   color: #fff;
   text-align: center;
   padding: 1rem 0;
@@ -269,5 +230,5 @@ footer {
 }
 
 .social-icons a:hover {
-  color: #a777e3;
+  color: #ccc;
 }
